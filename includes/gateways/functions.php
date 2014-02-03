@@ -10,8 +10,14 @@
 function rcp_get_payment_gateways() {
 
 	$gateways = array(
-		'paypal' => 'PayPal',
-		'stripe' => 'Stripe'
+		'paypal' => array(
+			'admin_label'    => __( 'PayPal Standard', 'rcp' ),
+			'checkout_label' => __( 'PayPal', 'rcp' )
+		),
+		'stripe' => array(
+			'admin_label'    => __( 'Stripe', 'rcp' ),
+			'checkout_label' => __( 'Credit Card', 'rcp' )
+		),
 	);
 
 	return apply_filters( 'rcp_payment_gateways', $gateways );
